@@ -8,10 +8,15 @@ public class Creep : Unit {
         return UnitType.Creep;
     }
 
-    protected int lane;
+    [HideInInspector]
+    public int lane;
     public float offsetLane = 0.25f;
     protected float laneY()
     {
         return GSGamePlay.Instance.lanes[lane].position.y + offsetLane; ;
+    }
+    public virtual void Init(int _lane)
+    {
+
     }
 }

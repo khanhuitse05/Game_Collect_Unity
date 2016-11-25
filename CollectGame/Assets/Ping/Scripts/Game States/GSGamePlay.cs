@@ -98,6 +98,7 @@ public class GSGamePlay : GSTemplate
         time = 0;
         star = 0;
         SpawnFood();
+        SpawnManager.Instance.StartGame();
     }
     public void OnPauseGame()
     {
@@ -122,6 +123,7 @@ public class GSGamePlay : GSTemplate
         listFood = new List<Food>();
         Destroy(hero.gameObject);
         hero = null;
+        SpawnManager.Instance.GameOver();
         GamePreferences.Instance.setting.updateScore(star, time);
         GamePreferences.Instance.setting.updateCoin(star);
         GamePreferences.Instance.SaveSetting();
