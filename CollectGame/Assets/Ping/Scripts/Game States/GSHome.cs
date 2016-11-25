@@ -73,5 +73,8 @@ public class GSHome : GSTemplate
     public void OnClickInfo() { }
     public void OnClickRate() { }
     public void OnClickShare() { }
-    public void OnClickShop() { }
+    public void OnClickShop()
+    {
+        GameStatesManager.Instance.stateMachine.PushState(GSShop.Instance);
+    }
 }

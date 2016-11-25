@@ -9,7 +9,11 @@ public class GamePreferences : MonoBehaviour
     void Awake()
     {
         _instance = this;
+    }
+    public void LoadPreferences()
+    {
         LoadSetting();
+        LoadCustomize();
     }
     /// <summary>
     /// Setting
@@ -31,6 +35,24 @@ public class GamePreferences : MonoBehaviour
     }
     public int currentHighScore { get { return setting.highScore[setting.currentDifficulty]; } }
 
+    /// <summary>
+    /// Customize
+    /// </summary>
+    public Customize customize { get; set; }
+    public Customize LoadCustomize()
+    {
+        customize = SaveGameManager.loadData<Customize>(GameTags.customizeDataKey);
+        if (customize == null)
+        {
+            customize = new Customize();
+            SaveCustomize();
+        }
+        return customize;
+    }
+    public void SaveCustomize()
+    {
+        SaveGameManager.saveData<Customize>(GameTags.customizeDataKey, customize);
+    }
 }
 
 public class Setting
@@ -55,6 +77,10 @@ public class Setting
             highScore[currentDifficulty] = _newScore;
         }
     }
+    public int getHighScore(int difff)
+    {
+        return highScore[difff];
+    }
     public void updateCoin(int _value)
     {
         coin = Mathf.Clamp(coin + _value, 0, Int32.MaxValue);
@@ -65,7 +91,7 @@ public class Setting
         sound = true;
         enableTutorial = true;
         rate = 0;
-        coin = 0;
+        coin = 500;
         currentStar = 0;
         currentTime = 0;
         highScore = new int[2];
@@ -73,5 +99,29 @@ public class Setting
         {
             highScore[i] = 0;
         }
+    }
+}
+public class Customize
+{
+    public int index;
+    public bool[] info;
+
+    public Customize()
+    {
+        index = 0;
+        info = new bool[30];
+        for (int i = 0; i < 30; i++)
+        {
+            info[i] = false;
+        }
+        info[0] = true;
+    }
+    public bool getInfo(int id)
+    {
+        return info[id];
+    }
+    public void Unlock(int id)
+    {
+        info[id] = true;
     }
 }

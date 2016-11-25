@@ -30,19 +30,4 @@ public class CsvControll
         StreamReader streamReader = new StreamReader(stream);
         return CsvFile.Read<T>(streamReader);
     }
-    /*
-    //Example
-    Dictionary<int, DataTemp> dataTemp;
-    void loadCustomizeData()
-    {
-        string filepath = "PathFile"; // in Resource
-        IEnumerable<DataTemp> dataListFromCSV = Utils.LoadCSVDataFromFile<DataCustomize>(filepath);
-        dataCustomize = new Dictionary<int, DataTemp>();
-
-        foreach (DataTemp datafromCSV in dataListFromCSV)
-        {
-            dataCustomize.Add(datafromCSV.id, datafromCSV);
-        }
-    }
-    */
 }

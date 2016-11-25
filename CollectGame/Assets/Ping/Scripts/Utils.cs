@@ -67,7 +67,7 @@ public class Utils
     public static GameObject Spawn(GameObject paramPrefab, Transform paramParent = null)
     {
         GameObject newObject = GameObject.Instantiate(paramPrefab) as GameObject;
-        newObject.transform.parent = paramParent;
+        newObject.transform.SetParent(paramParent);
         newObject.transform.localPosition = paramPrefab.transform.localPosition;
         newObject.transform.localScale = paramPrefab.transform.localScale;
         newObject.SetActive(true);

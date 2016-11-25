@@ -16,6 +16,8 @@ public class GameStatesManager : MonoBehaviour
     }
     void Start()
     {
+        DataManager.Instance.LoadData();
+        GamePreferences.Instance.LoadPreferences();
         AudioManager.SetSFXVolume(GamePreferences.Instance.setting.sound ? 1 : 0);
         stateMachine.PushState(defaultState);
     }
