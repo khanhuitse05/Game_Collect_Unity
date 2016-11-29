@@ -9,8 +9,10 @@ public class SpawnManager : MonoBehaviour {
     void Awake() { _instance = this; }
 
     public GameObject pfSpike;
+    public GameObject pfDrop;
     public GameObject[] pfCreep;
     public float intervalSpike = 3;
+    public float intervalDrop = 15;
 
     public List<Creep> listCreep { get; set; }
     void Start()
@@ -21,6 +23,7 @@ public class SpawnManager : MonoBehaviour {
             StartCoroutine(SpawnCreep(i));
         }
         StartCoroutine(SpawnSpikeRoutine());
+        StartCoroutine(SpawnDropRoutine());
     }
     public void StartGame ()
     {
@@ -35,6 +38,14 @@ public class SpawnManager : MonoBehaviour {
         {
             SpawnSpike();
             yield return new WaitForSeconds(intervalSpike);
+        }
+    }
+    IEnumerator SpawnDropRoutine()
+    {
+        while (true)
+        {
+            SpawnDrop();
+            yield return new WaitForSeconds(intervalDrop);
         }
     }
     IEnumerator SpawnCreep(int _lane)
@@ -52,6 +63,12 @@ public class SpawnManager : MonoBehaviour {
         GameObject _obj = ObjectPoolManager.Spawn(pfSpike);
         CreepSpike _creep = _obj.GetComponent<CreepSpike>();
         _creep.Init(_lane);
+    }
+    void SpawnDrop()
+    {
+        GameObject _obj = ObjectPoolManager.Spawn(pfDrop);
+        CreepDrop _creep = _obj.GetComponent<CreepDrop>();
+        _creep.Init(0);
     }
     public void UnSpawnCreep(Creep _creep)
     {

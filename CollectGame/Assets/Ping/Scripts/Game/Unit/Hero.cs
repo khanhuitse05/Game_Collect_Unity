@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class Hero : MonoBehaviour {
 
+    public SpriteRenderer sprite;
+    public GameObject body;
     public float heightJump;
     public int lane;
     protected int laneMax;
@@ -18,12 +20,13 @@ public class Hero : MonoBehaviour {
 
     public float gravityScale = 1;
     public float speed;
+    public float speedRotate;
     protected Vector2 velocity;
     protected  float gravity { get { return Physics2D.gravity.y * gravityScale; } }
 
     Control control;   
 
-    public void Init(Control _control)
+    public void Init(Control _control, int _index = 0)
     {
         control = _control;
         transform.position = new Vector3(0, laneY(0), 0);
@@ -32,7 +35,8 @@ public class Hero : MonoBehaviour {
         lane = 0;
         isJump = false;
         laneMax = GSGamePlay.Instance.lanes.Length - 1;
-        velocity = new Vector2(speed, 0);        
+        velocity = new Vector2(speed, 0);
+        sprite.sprite = Utils.loadResourcesSprite(GamePath.imageHero + GamePreferences.Instance.customize.index + _index);
     }
 	
 	void Update () {
@@ -45,6 +49,7 @@ public class Hero : MonoBehaviour {
     protected  void UpdateMove()
     {
         // Right
+        body.transform.Rotate(Vector3.forward * Time.deltaTime * velocity.x * speedRotate);
         transform.Translate(velocity * Time.deltaTime);
         if (transform.position.x > Pos.botRight.x)
         {

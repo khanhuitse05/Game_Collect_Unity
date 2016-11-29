@@ -14,6 +14,8 @@ public class Pos : MonoBehaviour {
     public Transform _spawnLeft;
     public Transform _spawnRight;
     public Transform _hero;
+    public Transform _top;
+    public Transform _bottom;
 
     public static Vector3 topLeft { get { return Instance._topLeft.position; } }
     public static Vector3 botRight { get { return Instance._botRight.position; } }
@@ -22,6 +24,8 @@ public class Pos : MonoBehaviour {
     public static Vector3 hero { get { return Instance._hero.position; } }
     public static float spawnLeft { get{ return Instance._spawnLeft.position.x; } }
     public static float spawnRight { get{ return Instance._spawnRight.position.x; } }
+    public static float top { get{ return Instance._top.position.y; } }
+    public static float bottom { get{ return Instance._bottom.position.y; } }
 
     void Awake()
     {

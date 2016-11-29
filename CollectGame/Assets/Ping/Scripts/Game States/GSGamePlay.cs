@@ -12,7 +12,7 @@ public class GSGamePlay : GSTemplate
     Control hero;
     public Text txtStar;
     public Text txtTime;
-    public GameObject food;
+    public GameObject[] food;
     public Transform[] lanes;
     List<Food> listFood;
 
@@ -155,11 +155,13 @@ public class GSGamePlay : GSTemplate
     GameObject _objSpawn;
     Food _foodSpawn;
     Vector3 _posSpawn = Vector3.zero;
+    int _indexFood;
     void SpawnFood()
     {
+        _indexFood = Random.Range(0, food.Length);
         _posSpawn.x = Random.Range(Pos.spawnLeft, Pos.spawnRight);
         _posSpawn.y = lanes[Random.Range(0, lanes.Length)].position.y;
-        _objSpawn = ObjectPoolManager.Spawn(food, _posSpawn, Quaternion.identity);
+        _objSpawn = ObjectPoolManager.Spawn(food[_indexFood], _posSpawn, Quaternion.identity);
         _foodSpawn = _objSpawn.GetComponent<Food>();
         listFood.Add(_foodSpawn);
     }

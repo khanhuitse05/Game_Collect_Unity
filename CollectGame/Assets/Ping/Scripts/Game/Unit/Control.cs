@@ -19,7 +19,7 @@ public class Control : Unit {
         Init();
     }
     public virtual void Init () {
-        dragDistance = Screen.height * 10 / 100;
+        dragDistance = Screen.height * 5 / 100;
         hero.Init(this);
     }
 

@@ -7,7 +7,7 @@ public class HeroHard : Control
     public override void Init()
     {
         base.Init();
-        hero1.Init(this);
+        hero1.Init(this, 1);
     }
     public Hero hero1;
     protected override void JumeUp()
