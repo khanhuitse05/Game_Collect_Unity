@@ -1,0 +1,14 @@
+lastUpgrade=00935
+proj.pluginVersion=0.9.35
+proj.AppId=423103671255
+and.BundleId=com.starseed.jumping
+proj.classDir=Assets
+proj.ConstantsClassName=GPSRId
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--%0d%0aGoogle+Play+game+services+IDs.%0d%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0d%0a--%3e%0d%0a%3cresources%3e%0d%0a++%3cstring+name%3d%22app_id%22%3e423103671255%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22package_name%22%3ecom.starseed.jumping%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_unlock_characters%22%3eCgkI19fGl6gMEAIQAA%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_100_score_normal%22%3eCgkI19fGl6gMEAIQAQ%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_1000_score_normal%22%3eCgkI19fGl6gMEAIQBg%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_100_score_hard%22%3eCgkI19fGl6gMEAIQAg%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_1000_score_hard%22%3eCgkI19fGl6gMEAIQBw%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_50_games%22%3eCgkI19fGl6gMEAIQAw%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_100_games%22%3eCgkI19fGl6gMEAIQBA%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_500_games%22%3eCgkI19fGl6gMEAIQBQ%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22leaderboard_normal_leaderboard%22%3eCgkI19fGl6gMEAIQCA%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22leaderboard_hard_leaderboard%22%3eCgkI19fGl6gMEAIQCQ%3c%2fstring%3e%0d%0a%3c%2fresources%3e%0d%0a
+and.ClientId=
+proj.requireGPlus=false
+android.SetupDone=true
+ios.ClientId=746109585531-j7h72fotbc1jj790595fistgh8q2e9pt.apps.googleusercontent.com
+ios.BundleId=com.Starseed.MySantaClaus
+ios.ResourceData=%23define+CLIENT_ID+%40%22746109585531-j7h72fotbc1jj790595fistgh8q2e9pt.apps.googleusercontent.com%22%0d%0a%23define+BUNDLE_ID+%40%22com.starseed.MySantaClaus%22%0d%0a%23define+ACH_SCORE__100+%40%22CgkI-5DjvNsVEAIQBA%22%0d%0a%23define+ACH_SCORE__150+%40%22CgkI-5DjvNsVEAIQBQ%22%0d%0a%23define+ACH_PLAY_100_TIMES+%40%22CgkI-5DjvNsVEAIQBg%22%0d%0a%23define+ACH_PLAY_500_TIMES+%40%22CgkI-5DjvNsVEAIQBw%22%0d%0a%23define+ACH_SCORE__200+%40%22CgkI-5DjvNsVEAIQCA%22%0d%0a%23define+LEAD_NORMAL+%40%22CgkI-5DjvNsVEAIQAg%22%0d%0a%23define+LEAD_HARD+%40%22CgkI-5DjvNsVEAIQAw%22
+ios.SetupDone=true
